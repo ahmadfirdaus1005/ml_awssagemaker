@@ -1,0 +1,49 @@
+conda create -p venv python==3.10 -y
+create requirements.txt
+conda activate venv/
+pip install -r requirements.txt
+create research.ipynb for your research
+!pip install sagemaker in Jupyter Notebook if not have, then restart kernel
+create IAM User
+- input user name
+- attach policies directly
+- check "AdministratorAccess"
+- click create user
+click the iam user name
+click Security credentials
+click Access keys
+- create Access keys 
+- click CLI 
+- check confirmation then next
+- create Access keys
+- Download file and put keys in other file
+this example keys, and will be deleted:
+>> Access key: AKIAVGNOINMZOV52FVEU
+>> Secret access key: cySQEELGbp0qxbIMI47gZ4TImE0J1KfqawouZTJH
+install AWS CLI if dont have: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+once you configure by >>aws configure, then you run your client
+now do the research, create train and test file.csv for the bucket
+create s3 bucket
+- go to console, s3
+- create bucket
+- put bucket name, same as the client on the research.ipynb.
+- unblock public access
+- click create bucket
+- click the bucket
+now send the data to s3 that will be train by sagemaker
+create script used by sagemaker to train model, the result script.py
+create sagemaker entrypoint
+got to iam role
+- create role
+- selec use case: sagemaker; sagemaker -execution
+- next, next,
+- put name role; sagemakeraccess
+iam role; "arn:aws:iam::357384612658:role/sagemakeraccess"
+put arn in aws sagemaker entrypoint script, then run
+lunch asynchronous call
+go to amazon sagemaker AI
+- training job
+- the model on the bucket, source.tar.gz something
+create deployment of endpoint
+- after run, go to sagemaker, interface, endpoint
+-
